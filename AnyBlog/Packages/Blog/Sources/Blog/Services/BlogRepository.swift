@@ -29,12 +29,17 @@ class BlogPostRepositoryImp : BlogRepository{
         var endPoint = nextPageToken == nil ? "blogs/6839959377168934742/posts?key=AIzaSyCWptosPBKqROY12Z6NtPaDLHgYA86fjok" : "blogs/6839959377168934742/posts?key=AIzaSyCWptosPBKqROY12Z6NtPaDLHgYA86fjok&pageToken=\(nextPageToken!)"
          print("Next page token :\(nextPageToken)")
         
-        return network.fetchData(endPoint: endPoint, responseType: BlogPostResponse.self)
+        let result = network.fetchData(endPoint: endPoint, responseType: BlogPostResponse.self)
             .map{ response in
+                print("Data Found")
                 self.nextPageToken = response.nextPageToken
                 return response.items ?? []
             }
             .eraseToAnyPublisher()
+        
+        print("this line is executing before data")
+        
+        return result
     }
      
 }
