@@ -7,9 +7,9 @@
 
 import Foundation
  
-struct BlogPost : Codable, Identifiable{
-    let id  : String
-    let title : String
-    let content : String
-    let published : String
+public struct BlogPost : Codable, Identifiable, Hashable{
+    public let id : String
+    public  let title : String
+    public let content : String
+    public let published : String
 }

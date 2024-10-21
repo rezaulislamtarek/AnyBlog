@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Router
 
 public struct BlogPostScreen: View {
     @StateObject private var blogVm = BlogPostViewModel(repo: BlogPostRepositoryImp())
+    @EnvironmentObject private var router : Router
     public init(){}
     public var body: some View {
         
@@ -25,6 +27,9 @@ public struct BlogPostScreen: View {
                                          blogVm.getBlogPosts()
                                          
                                     }
+                                }
+                                .onTapGesture {
+                                    router.navigate(to: BlogRoutes.blogDetails(post: post))
                                 }
                         }
                     }

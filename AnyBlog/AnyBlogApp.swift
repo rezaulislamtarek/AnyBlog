@@ -7,12 +7,25 @@
 
 import SwiftUI
 import Blog
+import Router
 
 @main
 struct AnyBlogApp: App {
+    @StateObject var router = Router()
     var body: some Scene {
         WindowGroup {
-            BlogPostScreen()
+            NavigationStack(path: $router.navPath) {
+                BlogPostScreen()
+                    .navigationDestination(for: BlogRoutes.self) { destination in
+                        switch destination {
+                           case .blogList :
+                            BlogPostScreen()
+                        case .blogDetails(let post):
+                            BlogPostDetailsScreen(post: post)
+                        }
+                    }
+            }
+            .environmentObject(router)
         }
     }
 }
