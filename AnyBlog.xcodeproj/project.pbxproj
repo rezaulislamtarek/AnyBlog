@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1C25B32CC699EB00B554B9 /* EasyNet in Resources */ = {isa = PBXBuildFile; fileRef = 0B1C25B22CC699EB00B554B9 /* EasyNet */; };
 		0B8FFFAB2CC25B3C00423CA9 /* AnyBlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAA2CC25B3C00423CA9 /* AnyBlogApp.swift */; };
 		0B8FFFAD2CC25B3C00423CA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAC2CC25B3C00423CA9 /* ContentView.swift */; };
 		0B8FFFAF2CC25B3E00423CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAE2CC25B3E00423CA9 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1C25B22CC699EB00B554B9 /* EasyNet */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EasyNet; sourceTree = "<group>"; };
 		0B8FFFA72CC25B3C00423CA9 /* AnyBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8FFFAA2CC25B3C00423CA9 /* AnyBlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBlogApp.swift; sourceTree = "<group>"; };
 		0B8FFFAC2CC25B3C00423CA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 		0B8FFFBE2CC27F7000423CA9 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				0B1C25B22CC699EB00B554B9 /* EasyNet */,
 				0B8FFFBF2CC27F7A00423CA9 /* Blog */,
 			);
 			path = Packages;
@@ -149,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1C25B32CC699EB00B554B9 /* EasyNet in Resources */,
 				0B8FFFB22CC25B3E00423CA9 /* Preview Assets.xcassets in Resources */,
 				0B8FFFAF2CC25B3E00423CA9 /* Assets.xcassets in Resources */,
 			);
