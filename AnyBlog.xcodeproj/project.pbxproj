@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B1C25B32CC699EB00B554B9 /* EasyNet in Resources */ = {isa = PBXBuildFile; fileRef = 0B1C25B22CC699EB00B554B9 /* EasyNet */; };
+		0B1C25B52CC69A4C00B554B9 /* EasyNet in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1C25B42CC69A4C00B554B9 /* EasyNet */; };
 		0B8FFFAB2CC25B3C00423CA9 /* AnyBlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAA2CC25B3C00423CA9 /* AnyBlogApp.swift */; };
 		0B8FFFAD2CC25B3C00423CA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAC2CC25B3C00423CA9 /* ContentView.swift */; };
 		0B8FFFAF2CC25B3E00423CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAE2CC25B3E00423CA9 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		0B1C25B22CC699EB00B554B9 /* EasyNet */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EasyNet; sourceTree = "<group>"; };
+		0B7230742CC6C5A9007EF53E /* Router */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Router; sourceTree = "<group>"; };
 		0B8FFFA72CC25B3C00423CA9 /* AnyBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8FFFAA2CC25B3C00423CA9 /* AnyBlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBlogApp.swift; sourceTree = "<group>"; };
 		0B8FFFAC2CC25B3C00423CA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1C25B52CC69A4C00B554B9 /* EasyNet in Frameworks */,
 				0B8FFFBD2CC27F2900423CA9 /* Blog in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +87,7 @@
 		0B8FFFBE2CC27F7000423CA9 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				0B7230742CC6C5A9007EF53E /* Router */,
 				0B1C25B22CC699EB00B554B9 /* EasyNet */,
 				0B8FFFBF2CC27F7A00423CA9 /* Blog */,
 			);
@@ -108,6 +112,7 @@
 			name = AnyBlog;
 			packageProductDependencies = (
 				0B8FFFBC2CC27F2900423CA9 /* Blog */,
+				0B1C25B42CC69A4C00B554B9 /* EasyNet */,
 			);
 			productName = AnyBlog;
 			productReference = 0B8FFFA72CC25B3C00423CA9 /* AnyBlog.app */;
@@ -376,6 +381,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0B1C25B42CC69A4C00B554B9 /* EasyNet */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EasyNet;
+		};
 		0B8FFFBC2CC27F2900423CA9 /* Blog */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Blog;
