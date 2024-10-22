@@ -55,6 +55,7 @@ public struct BlogPostScreen: View {
 
 #Preview {
     BlogPostScreen()
+        .environmentObject(Router())
 }
 
 struct ThumbnilView: View {
@@ -83,9 +84,37 @@ struct BlogRowView: View {
     var body: some View {
         HStack {
             ThumbnilView(image: nil, text: post.title)
-            Text(post.title)
-                .lineLimit(2)
+            VStack (alignment:.leading) {
+                Text(post.published.toReadableDate())
+                    .font(.caption2)
+                    .foregroundStyle(.gray)
+                Text(post.title)
+                    .lineLimit(2)
+                HStack(spacing: 4){
+                   
+                    Text("\(post.replies.totalItems)")
+                    Image(systemName: "bubble.right")
+                }
+                .foregroundStyle(.gray)
+                .frame(maxWidth: .infinity, alignment:.leading)
+                .font(.footnote)
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+
+extension String {
+    func toReadableDate() -> String {
+        let dateFormatter = ISO8601DateFormatter()
+        // Parse the string into a Date object
+        guard let date = dateFormatter.date(from: self) else { return self }
+        
+        let outputFormatter = DateFormatter()
+        // Set the desired output format
+        outputFormatter.dateFormat = "dd MMM, yyyy"
+        // Convert the Date object back to a string with the desired format
+        return outputFormatter.string(from: date)
     }
 }
