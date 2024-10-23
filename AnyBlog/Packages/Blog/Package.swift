@@ -13,8 +13,10 @@ let package = Package(
             targets: ["Blog"]),
     ],
     dependencies: [
+        .package(path: "../Router"),
         .package(path: "../EasyNet"),
-        .package(path: "../CommonComponent")
+        .package(path: "../CommonComponent"),
+        .package(path: "../Utils")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -23,7 +25,9 @@ let package = Package(
             name: "Blog",
             dependencies: [
                 .product(name: "EasyNet", package: "EasyNet"),
-                .product(name: "CommonComponent", package: "CommonComponent")
+                .product(name: "CommonComponent", package: "CommonComponent"),
+                .product(name: "Router", package: "Router"),
+                .product(name: "Utils", package: "Utils")
                  
             ]
         ),

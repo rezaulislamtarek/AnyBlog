@@ -7,22 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B1C25B52CC69A4C00B554B9 /* EasyNet in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1C25B42CC69A4C00B554B9 /* EasyNet */; };
-		0B22855F2CC828A300B822C3 /* Blog in Sources */ = {isa = PBXBuildFile; fileRef = 0B8FFFBF2CC27F7A00423CA9 /* Blog */; };
-		0B2285602CC828A900B822C3 /* CommonComponent in Sources */ = {isa = PBXBuildFile; fileRef = 0B7230772CC6D0CE007EF53E /* CommonComponent */; };
-		0B2285612CC828AF00B822C3 /* Router in Sources */ = {isa = PBXBuildFile; fileRef = 0B7230742CC6C5A9007EF53E /* Router */; };
-		0B2285622CC828B300B822C3 /* EasyNet in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C25B22CC699EB00B554B9 /* EasyNet */; };
-		0B7230762CC6CAD2007EF53E /* Router in Frameworks */ = {isa = PBXBuildFile; productRef = 0B7230752CC6CAD2007EF53E /* Router */; };
-		0B72307E2CC6DA59007EF53E /* CommonComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 0B72307D2CC6DA59007EF53E /* CommonComponent */; };
+		0B2848DB2CC8A58C002154E7 /* Blog in Frameworks */ = {isa = PBXBuildFile; productRef = 0B2848DA2CC8A58C002154E7 /* Blog */; };
 		0B8FFFAB2CC25B3C00423CA9 /* AnyBlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAA2CC25B3C00423CA9 /* AnyBlogApp.swift */; };
 		0B8FFFAD2CC25B3C00423CA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAC2CC25B3C00423CA9 /* ContentView.swift */; };
 		0B8FFFAF2CC25B3E00423CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAE2CC25B3E00423CA9 /* Assets.xcassets */; };
 		0B8FFFB22CC25B3E00423CA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B8FFFB12CC25B3E00423CA9 /* Preview Assets.xcassets */; };
-		0B8FFFBD2CC27F2900423CA9 /* Blog in Frameworks */ = {isa = PBXBuildFile; productRef = 0B8FFFBC2CC27F2900423CA9 /* Blog */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B1C25B22CC699EB00B554B9 /* EasyNet */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EasyNet; sourceTree = "<group>"; };
+		0B2848D92CC8A3ED002154E7 /* Utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utils; sourceTree = "<group>"; };
 		0B7230742CC6C5A9007EF53E /* Router */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Router; sourceTree = "<group>"; };
 		0B7230772CC6D0CE007EF53E /* CommonComponent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CommonComponent; sourceTree = "<group>"; };
 		0B8FFFA72CC25B3C00423CA9 /* AnyBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,10 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B1C25B52CC69A4C00B554B9 /* EasyNet in Frameworks */,
-				0B7230762CC6CAD2007EF53E /* Router in Frameworks */,
-				0B8FFFBD2CC27F2900423CA9 /* Blog in Frameworks */,
-				0B72307E2CC6DA59007EF53E /* CommonComponent in Frameworks */,
+				0B2848DB2CC8A58C002154E7 /* Blog in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +86,7 @@
 		0B8FFFBE2CC27F7000423CA9 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				0B2848D92CC8A3ED002154E7 /* Utils */,
 				0B7230772CC6D0CE007EF53E /* CommonComponent */,
 				0B7230742CC6C5A9007EF53E /* Router */,
 				0B1C25B22CC699EB00B554B9 /* EasyNet */,
@@ -120,10 +112,7 @@
 			);
 			name = AnyBlog;
 			packageProductDependencies = (
-				0B8FFFBC2CC27F2900423CA9 /* Blog */,
-				0B1C25B42CC69A4C00B554B9 /* EasyNet */,
-				0B7230752CC6CAD2007EF53E /* Router */,
-				0B72307D2CC6DA59007EF53E /* CommonComponent */,
+				0B2848DA2CC8A58C002154E7 /* Blog */,
 			);
 			productName = AnyBlog;
 			productReference = 0B8FFFA72CC25B3C00423CA9 /* AnyBlog.app */;
@@ -180,10 +169,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B2285622CC828B300B822C3 /* EasyNet in Sources */,
-				0B2285612CC828AF00B822C3 /* Router in Sources */,
-				0B2285602CC828A900B822C3 /* CommonComponent in Sources */,
-				0B22855F2CC828A300B822C3 /* Blog in Sources */,
 				0B8FFFAD2CC25B3C00423CA9 /* ContentView.swift in Sources */,
 				0B8FFFAB2CC25B3C00423CA9 /* AnyBlogApp.swift in Sources */,
 			);
@@ -395,19 +380,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B1C25B42CC69A4C00B554B9 /* EasyNet */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = EasyNet;
-		};
-		0B7230752CC6CAD2007EF53E /* Router */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Router;
-		};
-		0B72307D2CC6DA59007EF53E /* CommonComponent */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CommonComponent;
-		};
-		0B8FFFBC2CC27F2900423CA9 /* Blog */ = {
+		0B2848DA2CC8A58C002154E7 /* Blog */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Blog;
 		};
