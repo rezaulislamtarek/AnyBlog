@@ -11,6 +11,8 @@ import Combine
 class BlogPostViewModel : ObservableObject{
     private var cancellable : Set<AnyCancellable> = []
     @Published var blogPosts : [BlogPost] = []
+    @Published var selectedPost : BlogPost?
+    
     private var repo : BlogRepository
     
     init(repo: BlogRepository) {
