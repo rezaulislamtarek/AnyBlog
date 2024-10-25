@@ -22,6 +22,7 @@ public struct BlogPost : Codable, Identifiable, Hashable{
 public struct Author : Codable, Hashable{
     public let id: String
     public let displayName  : String
+    public let image : ImageResource?
 }
 
 

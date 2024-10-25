@@ -18,8 +18,7 @@ public struct BlogPostScreen: View {
     public var body: some View {
         
         VStack(alignment: .leading ) {
-            
-            
+             
             
             ScrollView(.vertical,showsIndicators: false) {
                 VStack(alignment: .leading ){ 
@@ -79,32 +78,16 @@ public struct BlogPostScreen: View {
 }
 
 
-struct ThumbnilView: View {
-    let image : String?
-    let text : String?
-    
-    var body: some View {
-        Text(text ?? "")
-            .font(.caption)
-            .padding()
-            .frame(width: 140, height: 100, alignment: .leading)
-            .background(
-                RoundedRectangle(cornerRadius: 12.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
-                    .fill(
-                        LinearGradient(gradient: Gradient(colors: getTwoRandomColors(opacity: 0.8)), startPoint: .bottomLeading, endPoint: .topTrailing)
-                        
-                            .opacity(0.5)
-                    )
-            )
-    }
-}
+
 
 struct BlogRowView: View {
     let post : BlogPost
     
     var body: some View {
         HStack {
-            ThumbnilView(image: nil, text: post.title)
+            ThumbnilView(image: nil, text: post.title, width: 140, height: 100, alignment: .leading )
+                .font(.caption)
+                 
             VStack (alignment:.leading) {
                 Text(post.published.toReadableDate())
                     .font(.caption2)
