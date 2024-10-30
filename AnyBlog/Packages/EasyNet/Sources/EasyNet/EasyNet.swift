@@ -146,7 +146,7 @@ public class EasyNet{
                 .eraseToAnyPublisher()
         }
         
-        var formDataFields = [(String, String)]()
+        //_ = [(String, String)]()
         
         guard let imageData = image.jpegData(compressionQuality: 0.8) else {
             return Fail(error: NetworkError.bodyPerseError)

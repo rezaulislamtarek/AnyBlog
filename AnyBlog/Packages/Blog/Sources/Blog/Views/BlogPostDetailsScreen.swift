@@ -50,7 +50,7 @@ public struct BlogPostDetailsScreen: View {
             }
         })
         .navigationTitle(post.title)
-        .padding()
+        .padding(.horizontal)
     }
 }
 
