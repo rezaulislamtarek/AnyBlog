@@ -18,8 +18,8 @@ struct AnyBlogApp: App {
                 ContentView()
                     .navigationDestination(for: BlogRoutes.self) { destination in
                         switch destination {
-                           case .blogList :
-                            BlogPostScreen()
+                           case .blogList(let tag) :
+                            BlogPostScreen(tag: tag)
                         case .blogDetails(let post):
                             BlogPostDetailsScreen(post: post)
                         }

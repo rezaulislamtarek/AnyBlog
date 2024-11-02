@@ -16,7 +16,7 @@ struct ContentView: View {
             //HostView
             TabView(selection: $selectdTab,
                     content:  {
-                BlogPostScreen()
+                BlogPostScreen(tag: nil)
                     .tag(BottomTabs.latest)
                 
                 TagsScreen()

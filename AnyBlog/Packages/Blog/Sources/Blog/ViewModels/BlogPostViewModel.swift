@@ -19,13 +19,40 @@ class BlogPostViewModel : ObservableObject{
         self.repo = repo
     }
     
-    func getBlogPosts( ){
+    func getBlogPosts(tag : String?){
+        if tag == nil {
+            getAllBlogPosts()
+        }else{
+            print("Tag \(tag)")
+            getBlogPostByTag(tag: tag!)
+        }
+    }
+    
+    private func getAllBlogPosts( ){
         if blogPosts.count%10 != 0 { return }
         repo.fetchBlogPosts(apiKey: "" )
             .sink { com in
                 
             } receiveValue: { data in
                 self.blogPosts.append(contentsOf: data)      }
+            .store(in: &cancellable)
+
+    }
+    
+    private func getBlogPostByTag(tag : String){
+        if blogPosts.count%10 != 0 { return }
+        repo.fetchBlogPostsByTag(apiKey: "", tag: tag)
+            .sink { com in
+                switch com{
+                    
+                case .finished:
+                    print("Finish")
+                case .failure(let  error):
+                    print("Error: \(error)")
+                }
+            } receiveValue: { data in
+                self.blogPosts.append(contentsOf: data)
+            }
             .store(in: &cancellable)
 
     }

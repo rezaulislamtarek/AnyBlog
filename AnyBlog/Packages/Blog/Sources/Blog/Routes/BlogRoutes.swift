@@ -8,7 +8,7 @@
 import Foundation
 
 public enum BlogRoutes : Hashable{
-    case blogList
+    case blogList(tag : String?)
     case blogDetails(post : BlogPost)
 }
  

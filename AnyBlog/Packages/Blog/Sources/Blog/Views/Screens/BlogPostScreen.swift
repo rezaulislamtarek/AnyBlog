@@ -14,7 +14,10 @@ public struct BlogPostScreen: View {
     @StateObject private var blogVm = BlogPostViewModel(repo: BlogPostRepositoryImp())
     @EnvironmentObject private var router : Router
     @State var searchText : String = ""
-    public init(){}
+    var tag : String?
+    public init(tag : String?){
+        self.tag = tag
+    }
     public var body: some View {
         
         VStack(alignment: .leading ) {
@@ -31,7 +34,7 @@ public struct BlogPostScreen: View {
                                 .onAppear{
                                     if blogVm.blogPosts.last?.id == post.id{
                                         print("next page call")
-                                         blogVm.getBlogPosts()
+                                         blogVm.getBlogPosts(tag: tag)
                                     }
                                 }
                                 .onTapGesture {
@@ -46,9 +49,8 @@ public struct BlogPostScreen: View {
             }
              
             .overlay(alignment: .top, content: {
-                Text("Blogs")
+                Text("\(tag ?? "Blogs")")
                     .bold()
-                   // .font(.largeTitle)
                     .font(.system(size: 32, weight: .bold, design: .rounded))
                     .padding()
                     .frame(maxWidth: .infinity, alignment:.leading)
@@ -56,22 +58,24 @@ public struct BlogPostScreen: View {
             })
             .onAppear{
                 print("Blog Screen Appeared")
-                blogVm.getBlogPosts()
+                blogVm.getBlogPosts(tag: tag )
         }
         }
+        .navigationBarTitleDisplayMode(.inline )
+        .toolbarBackground(.hidden, for: .navigationBar)
     }
 }
 
 #Preview {
     
-        BlogPostScreen()
+    BlogPostScreen(tag: nil)
             .environmentObject(Router())
             .preferredColorScheme(.dark)
      
 }
 #Preview {
     
-        BlogPostScreen()
+    BlogPostScreen(tag: nil)
             .environmentObject(Router())
             .preferredColorScheme(.light)
      

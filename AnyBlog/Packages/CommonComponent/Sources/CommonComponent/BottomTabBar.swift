@@ -27,6 +27,7 @@ public struct BottomTabBar: View {
                 Spacer()
                 VStack (spacing : 6) {
                     Text(item.rawValue)
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
                     
                     if selectedTab == item {
                         RoundedRectangle(cornerRadius: 25.0, style: .continuous)
