@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B2848DB2CC8A58C002154E7 /* Blog in Frameworks */ = {isa = PBXBuildFile; productRef = 0B2848DA2CC8A58C002154E7 /* Blog */; };
+		0B6E34922CD5DC8700719DE6 /* CommonComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6E34912CD5DC8700719DE6 /* CommonComponent */; };
 		0B8FFFAB2CC25B3C00423CA9 /* AnyBlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAA2CC25B3C00423CA9 /* AnyBlogApp.swift */; };
 		0B8FFFAD2CC25B3C00423CA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAC2CC25B3C00423CA9 /* ContentView.swift */; };
 		0B8FFFAF2CC25B3E00423CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B8FFFAE2CC25B3E00423CA9 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B2848DB2CC8A58C002154E7 /* Blog in Frameworks */,
+				0B6E34922CD5DC8700719DE6 /* CommonComponent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +115,7 @@
 			name = AnyBlog;
 			packageProductDependencies = (
 				0B2848DA2CC8A58C002154E7 /* Blog */,
+				0B6E34912CD5DC8700719DE6 /* CommonComponent */,
 			);
 			productName = AnyBlog;
 			productReference = 0B8FFFA72CC25B3C00423CA9 /* AnyBlog.app */;
@@ -383,6 +386,10 @@
 		0B2848DA2CC8A58C002154E7 /* Blog */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Blog;
+		};
+		0B6E34912CD5DC8700719DE6 /* CommonComponent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CommonComponent;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

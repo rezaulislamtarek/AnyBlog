@@ -15,7 +15,7 @@ struct AnyBlogApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navPath) {
-                BlogPostScreen()
+                ContentView()
                     .navigationDestination(for: BlogRoutes.self) { destination in
                         switch destination {
                            case .blogList :
