@@ -49,7 +49,7 @@ public struct BottomTabBar: View {
             }
         }
         .padding(.top, 8)
-        .background(.white)
+        //.background(.white)
     }
 }
 
