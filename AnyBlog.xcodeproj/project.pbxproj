@@ -26,6 +26,7 @@
 		0B8FFFAE2CC25B3E00423CA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B8FFFB12CC25B3E00423CA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0B8FFFBF2CC27F7A00423CA9 /* Blog */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Blog; sourceTree = "<group>"; };
+		0BE979192CE05AB4004A3987 /* TestUtilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TestUtilities; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +89,7 @@
 		0B8FFFBE2CC27F7000423CA9 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				0BE979192CE05AB4004A3987 /* TestUtilities */,
 				0B2848D92CC8A3ED002154E7 /* Utils */,
 				0B7230772CC6D0CE007EF53E /* CommonComponent */,
 				0B7230742CC6C5A9007EF53E /* Router */,

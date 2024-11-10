@@ -4,7 +4,7 @@ import UIKit
 import Combine 
 
 
-public class EasyNet{
+ public class EasyNet{
     // Create a PassthroughSubject to broadcast status updates
     public var unauthorizedSubject = PassthroughSubject<Void, Never>()
     
