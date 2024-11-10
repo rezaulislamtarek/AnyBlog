@@ -16,7 +16,8 @@ let package = Package(
         .package(path: "../Router"),
         .package(path: "../EasyNet"),
         .package(path: "../CommonComponent"),
-        .package(path: "../Utils")
+        .package(path: "../Utils"),
+        .package(path: "../TestUtilities")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -27,8 +28,13 @@ let package = Package(
                 .product(name: "EasyNet", package: "EasyNet"),
                 .product(name: "CommonComponent", package: "CommonComponent"),
                 .product(name: "Router", package: "Router"),
-                .product(name: "Utils", package: "Utils")
+                .product(name: "Utils", package: "Utils"),
+                .product(name: "TestUtilities", package: "TestUtilities"),
                  
+            ],
+            resources: [
+                .process("Resources/mock_blog_posts.json")
+                
             ]
         ),
         .testTarget(
@@ -38,7 +44,12 @@ let package = Package(
                  //.product(name: "Factory", package: "Factory"),
                 // .product(name: "SmartNet", package: "SmartNet")
                  
-            ]),
+            ],
+            resources: [
+                .process("Resources/mock_blog_posts.json")
+                
+            ]
+        ),
     ]
     
 )

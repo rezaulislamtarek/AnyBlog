@@ -25,6 +25,7 @@ class BlogPostRepositoryImp : BlogRepository{
     
     init(network: EasyNet = EasyNet(baseUrl: "https://www.googleapis.com/blogger/v3/") ) {
         self.network = network
+        print("instance \(type(of: network))")
     }
     
     func fetchBlogPosts(apiKey: String) -> AnyPublisher<[BlogPost], Error> {
@@ -33,9 +34,11 @@ class BlogPostRepositoryImp : BlogRepository{
         print("Next page token :\(String(describing: nextPageToken))")
         
         let result = network.fetchData(endPoint: endPoint, responseType: BlogPostResponse.self)
+             
             .map{ response in
                 print("Data Found")
                 self.nextPageToken = response.nextPageToken
+                print("Moc \(response.items?.count)")
                 return response.items ?? []
             }
             .eraseToAnyPublisher()

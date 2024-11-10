@@ -9,18 +9,23 @@ import Combine
 @testable import EasyNet
 import Foundation
 
-class MockEasyNet: EasyNet {
+public class MockEasyNet: EasyNet {
     
-    var mockData: Data?
-    var mockError: Error?
+    public var mockData: Data?
+    public var mockError: Error?
     
-    override func fetchData<T>(endPoint: String, responseType: T.Type, extraHeaders: [String : String]? = nil) -> AnyPublisher<T, Error> where T : Decodable, T : Encodable {
+    public override func fetchData<T>(endPoint: String, responseType: T.Type, extraHeaders: [String : String]? = nil) -> AnyPublisher<T, Error> where T : Decodable, T : Encodable {
+        print("Fetching \(T.Type.self)")
         if let error = mockError{
+            print("Fetching  error\(T.Type.self)")
             return Fail(error: error).eraseToAnyPublisher()
         }
+        print("Fetching  moc Data\(mockData)")
         if let data = mockData {
             let  decoder =  JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
+            
+            print("Moc Data \(data)")
             
             do {
                 let decodedData = try decoder.decode(T.self, from: data)
