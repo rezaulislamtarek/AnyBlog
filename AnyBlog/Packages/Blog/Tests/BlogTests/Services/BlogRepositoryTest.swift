@@ -32,7 +32,7 @@ final class BlogRepositoryTest : XCTestCase {
     }
     
     func loadJSON(filename: String) -> Data? {
-        let bundle = Bundle(for: type(of: self))  // Use the test class's bundle
+        let bundle = Bundle(for: type(of: self))
         if let url = Bundle.module.url(forResource: filename, withExtension: "json") {
             print("Found URL: \(url)")
             do {
@@ -49,20 +49,19 @@ final class BlogRepositoryTest : XCTestCase {
 
     
     func testFetchBlogPostSuccess(){
-        mocNetwork.mockData = loadJSON(filename: "mock_blog_posts")
         
-        print("MocData \(mocNetwork.mockData)")
+        mocNetwork.mockData = loadJSON(filename: "mock_blog_posts")
          
         let expection = XCTestExpectation(description: "Fetch blog posts")
         sut.fetchBlogPosts(apiKey: "test_key").sink { com in
              
         } receiveValue: { blogPosts in
-             
+            XCTAssertEqual(blogPosts.count, 10)
             expection.fulfill()
         }
         .store(in: &cancellables)
         
-        wait(for: [expection], timeout: 10)
+        wait(for: [expection], timeout: 1)
 
     }
 }
