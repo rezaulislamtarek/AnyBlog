@@ -32,7 +32,7 @@ final class BlogPostViewModelTest : XCTestCase {
     }
     
     func testGetBlogPosts(){
-        mocNet.mockData = loadJSON(filename: "mock_blog_posts")
+        mocNet.mockData = BlogTestUtil.loadJSON(filename: "mock_blog_posts")
         blogVm.getBlogPosts(tag: nil)
         let expection = XCTestExpectation(description: "Get Blog posts")
         blogVm.$blogPosts.sink { blogs in
@@ -44,7 +44,7 @@ final class BlogPostViewModelTest : XCTestCase {
     
     func testGetBlogsByTagWhenTagIsiOS(){
         blogVm.blogPosts = []
-        mocNet.mockData = loadJSON(filename: "moc_ios_tag_blogs")
+        mocNet.mockData = BlogTestUtil.loadJSON(filename: "moc_ios_tag_blogs")
         blogVm.getBlogPosts(tag: "iOS")
         let expection = XCTestExpectation(description: "Blogs by tag")
         blogVm.$blogPosts.sink { blogs in
@@ -55,18 +55,5 @@ final class BlogPostViewModelTest : XCTestCase {
         wait(for: [expection],timeout: 100)
     }
     
-    func loadJSON(filename: String) -> Data? {
-        let bundle = Bundle(for: type(of: self))
-        if let url = Bundle.module.url(forResource: filename, withExtension: "json") {
-            print("Found URL: \(url)")
-            do {
-                return try Data(contentsOf: url)
-            } catch {
-                XCTFail("Failed to load JSON from \(url): \(error)")
-            }
-        } else {
-            XCTFail("Failed to locate \(filename).json in test bundle")
-        }
-        return nil
-    }
+    
 }

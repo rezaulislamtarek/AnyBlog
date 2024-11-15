@@ -31,26 +31,11 @@ final class BlogRepositoryTest : XCTestCase {
         super.tearDown()
     }
     
-    func loadJSON(filename: String) -> Data? {
-        let bundle = Bundle(for: type(of: self))
-        if let url = Bundle.module.url(forResource: filename, withExtension: "json") {
-            print("Found URL: \(url)")
-            do {
-                return try Data(contentsOf: url)
-            } catch {
-                XCTFail("Failed to load JSON from \(url): \(error)")
-            }
-        } else {
-            XCTFail("Failed to locate \(filename).json in test bundle")
-        }
-        return nil
-    }
-
-
+    
     
     func testFetchBlogPostSuccess(){
         
-        mocNetwork.mockData = loadJSON(filename: "mock_blog_posts")
+        mocNetwork.mockData = BlogTestUtil.loadJSON(filename: "mock_blog_posts")
          
         let expection = XCTestExpectation(description: "Fetch blog posts")
         sut.fetchBlogPosts(apiKey: "test_key").sink { com in
