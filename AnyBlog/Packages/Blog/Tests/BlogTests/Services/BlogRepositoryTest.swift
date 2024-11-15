@@ -64,4 +64,22 @@ final class BlogRepositoryTest : XCTestCase {
         wait(for: [expection], timeout: 1)
 
     }
+    func testFetchBlogPostFail(){
+        let  expection = XCTestExpectation(description: "Fail to fetch")
+        sut.fetchBlogPosts(apiKey: "test_key").sink { com in
+            switch com{
+            case .failure(let error):
+                XCTAssertEqual(error.localizedDescription, NetworkError.unknown.localizedDescription )
+                expection.fulfill()
+            case .finished:
+                break
+            }
+        } receiveValue: { blogPosts in
+            
+        }
+        
+        wait(for: [expection], timeout: 111)
+
+    }
+    
 }

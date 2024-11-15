@@ -33,7 +33,8 @@ let package = Package(
                  
             ],
             resources: [
-                .process("Resources/mock_blog_posts.json")
+                .process("Resources/mock_blog_posts.json"),
+                .process("Resources/moc_ios_tag_blogs.json"),
                 
             ]
         ),
